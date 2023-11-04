@@ -56,9 +56,10 @@ def stop_deletion():
 root = tk.Tk()
 root.title("Auto-File Deleter")
 root.geometry("400x500+700+200")
+root.attributes("-topmost", True)
 
 # Initialize the ttkbootstrap style
-style = Style(theme="vapor")#you can find more themes in the ttkbootstrap website
+style = Style(theme="superhero")#you can find more themes in the ttkbootstrap website
 
 # Create a button to open the folder explorer
 open_button = ttk.Button(root, text="Open Folder Explorer", command=open_folder_explorer)
