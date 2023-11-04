@@ -92,10 +92,9 @@ delete_frequency_label = ttk.Label(
     root, text="How often do you want to delete the folder contents?")
 delete_frequency_label.pack()
 delete_frequency = tk.IntVar()
-delete_frequency_combobox = ttk.Combobox(
-    root, textvariable=delete_frequency, values=[1, 7, 30, 365], state="readonly")
-delete_frequency_combobox.pack()
-delete_frequency_combobox.set(1)  # Default value
+delete_frequency_EntryBox = ttk.Entry(
+    root, textvariable=delete_frequency)
+delete_frequency_EntryBox.pack()
 
 # Create a Combobox for specifying the time unit
 time_unit_label = ttk.Label(root, text="Select time unit:")
