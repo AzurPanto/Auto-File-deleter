@@ -68,8 +68,7 @@ def stop_deletion():
 root = tk.Tk()
 root.title("Auto-File Deleter")
 root.geometry("350x350+700+200")
-root.attributes("-topmost", True)
-root.overrideredirect(True)
+root.iconbitmap("./assets/bin_icon.ico")
 
 # Initialize the ttkbootstrap style
 # you can find more themes in the ttkbootstrap website
