@@ -106,10 +106,14 @@ time_unit_combobox = ttk.Combobox(root, textvariable=time_unit, values=[
 time_unit_combobox.pack()
 time_unit_combobox.set("minutes")  # Default value
 
+#Deletion control frame
+deletion_frame = ttk.Frame(root)
+deletion_frame.pack()
+
 # Create a button to schedule the deletion of the folder contents
 delete_button = ttk.Button(
-    root, text="Delete Folder Contents", command=delete_folder)
-delete_button.pack(pady=10)
+    deletion_frame, text="Schedule deletion", command=delete_folder)
+delete_button.pack(pady=10, side="left", padx=10)
 
 # Create a label to display the result
 result_label = ttk.Label(root, text="You have not selected a folder!")
@@ -117,12 +121,12 @@ result_label.pack()
 
 # Create a button to stop the automatic deletion
 stop_button = ttk.Button(
-    root, text="Stop The deletion process", command=stop_deletion)
-stop_button.pack(pady=10)
+    deletion_frame, text="Unschedule deletion", command=stop_deletion)
+stop_button.pack(pady=10, side="left")
 
 # Create a button to close the window
-close_button = tk.Button(root, text="Close", command=close_window)
-close_button.pack()
+close_button = tk.Button(root, text="Exit", command=close_window)
+close_button.pack(pady=10)
 
 # Start a separate thread for the scheduler
 
