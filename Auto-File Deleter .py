@@ -68,8 +68,7 @@ def stop_deletion():
 root = tk.Tk()
 root.title("Auto-File Deleter")
 root.geometry("350x350+700+200")
-root.attributes("-topmost", True)
-root.overrideredirect(True)
+root.iconbitmap("./assets/bin_icon.ico")
 
 # Initialize the ttkbootstrap style
 # you can find more themes in the ttkbootstrap website
@@ -93,10 +92,9 @@ delete_frequency_label = ttk.Label(
     root, text="How often do you want to delete the folder contents?")
 delete_frequency_label.pack()
 delete_frequency = tk.IntVar()
-delete_frequency_combobox = ttk.Combobox(
-    root, textvariable=delete_frequency, values=[1, 7, 30, 365], state="readonly")
-delete_frequency_combobox.pack()
-delete_frequency_combobox.set(1)  # Default value
+delete_frequency_EntryBox = ttk.Entry(
+    root, textvariable=delete_frequency)
+delete_frequency_EntryBox.pack()
 
 # Create a Combobox for specifying the time unit
 time_unit_label = ttk.Label(root, text="Select time unit:")
@@ -107,10 +105,14 @@ time_unit_combobox = ttk.Combobox(root, textvariable=time_unit, values=[
 time_unit_combobox.pack()
 time_unit_combobox.set("minutes")  # Default value
 
+#Deletion control frame
+deletion_frame = ttk.Frame(root)
+deletion_frame.pack()
+
 # Create a button to schedule the deletion of the folder contents
 delete_button = ttk.Button(
-    root, text="Delete Folder Contents", command=delete_folder)
-delete_button.pack(pady=10)
+    deletion_frame, text="Schedule deletion", command=delete_folder)
+delete_button.pack(pady=10, side="left", padx=10)
 
 # Create a label to display the result
 result_label = ttk.Label(root, text="You have not selected a folder!")
@@ -118,12 +120,12 @@ result_label.pack()
 
 # Create a button to stop the automatic deletion
 stop_button = ttk.Button(
-    root, text="Stop The deletion process", command=stop_deletion)
-stop_button.pack(pady=10)
+    deletion_frame, text="Unschedule deletion", command=stop_deletion)
+stop_button.pack(pady=10, side="left")
 
 # Create a button to close the window
-close_button = tk.Button(root, text="Close", command=close_window)
-close_button.pack()
+close_button = tk.Button(root, text="Exit", command=close_window)
+close_button.pack(pady=10)
 
 # Start a separate thread for the scheduler
 
