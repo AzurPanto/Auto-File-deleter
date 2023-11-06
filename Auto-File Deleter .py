@@ -72,7 +72,7 @@ root.iconbitmap("./assets/bin_icon.ico")
 
 # Initialize the ttkbootstrap style
 # you can find more themes in the ttkbootstrap website
-style = Style(theme="superhero")
+style = Style(theme="vapor")
 
 spacer_label = ttk.Label(root, text=" ")
 spacer_label.pack(pady=8)
