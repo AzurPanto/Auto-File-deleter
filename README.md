@@ -8,3 +8,4 @@ If you would like to have this program run as soon as your compurer launches, fo
 2) type shell:startup
 3) then drag the assets folder and the python code into the startup folder
 4) Now the python program will run as a startup app
+   When you do this, it doesn't automatically start the code, instead it opens your python code compiler and shows you the code, sorry!
